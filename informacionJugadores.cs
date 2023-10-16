@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Lab3
 {
-    public partial class nJuegoJugadores : Form
+    public partial class informacionJugadores : Form
     {
-        public nJuegoJugadores()
+        public informacionJugadores()
         {
             InitializeComponent();
         }
+
+        
     }
 }

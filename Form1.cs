@@ -38,7 +38,7 @@ namespace Lab3
         //metodo que llama al metodo cambiarInterfaz al seleccionar la opcion Nuevo Juego del menu
         private void btnNuevoJuego_Click(object sender, EventArgs e)
         {
-            cambiarInterfaz(new nJuegoCantJ() );
+            cambiarInterfaz(new nJuego() );
         }
 
         //Metodo que llama al metodo cambiarInterfaz al darle click al logo del programa
@@ -47,10 +47,15 @@ namespace Lab3
             cambiarInterfaz(new inicio());
         }
 
-       
+        private void btnInfoJugadores_Click(object sender, EventArgs e)
+        {
+            cambiarInterfaz(new informacionJugadores());
+        }
 
-
-
+        private void btnInfoJuego_Click(object sender, EventArgs e)
+        {
+            cambiarInterfaz(new informacionJuego());
+        }
     }
 
 }

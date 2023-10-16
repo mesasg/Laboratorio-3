@@ -53,6 +53,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="informacionJuego.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="informacionJuego.Designer.cs">
+      <DependentUpon>informacionJuego.cs</DependentUpon>
+    </Compile>
+    <Compile Include="informacionJugadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="informacionJugadores.Designer.cs">
+      <DependentUpon>informacionJugadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,31 +72,28 @@
       <DependentUpon>inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Jugador.cs" />
-    <Compile Include="nJuegoJugadores.cs">
+    <Compile Include="nJuego.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="nJuegoJugadores.Designer.cs">
-      <DependentUpon>nJuegoJugadores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="nJuegoCantJ.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="nJuegoCantJ.Designer.cs">
-      <DependentUpon>nJuegoCantJ.cs</DependentUpon>
+    <Compile Include="nJuego.Designer.cs">
+      <DependentUpon>nJuego.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="informacionJuego.resx">
+      <DependentUpon>informacionJuego.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="informacionJugadores.resx">
+      <DependentUpon>informacionJugadores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="inicio.resx">
       <DependentUpon>inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nJuegoCantJ.resx">
-      <DependentUpon>nJuegoCantJ.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="nJuegoJugadores.resx">
-      <DependentUpon>nJuegoJugadores.cs</DependentUpon>
+    <EmbeddedResource Include="nJuego.resx">
+      <DependentUpon>nJuego.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

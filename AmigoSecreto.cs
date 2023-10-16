@@ -23,7 +23,10 @@ namespace Lab3
 
         }
         
+        public void vectorJugadores (Object jugador)
+        {
 
+        }
         
 
     }
