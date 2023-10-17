@@ -11,9 +11,14 @@ using System.Windows.Forms;
 
 namespace Lab3
 {
-    //Clase que contiene los metodos que se ejecutan al realizar acciones en la interfaz nuevoJuego1
+    /// <summary>
+    /// Clase que contiene los métodos que se ejecutan al interactuar con la interfaz nuevoJuego
+    /// </summary>
     public partial class nJuego : Form
     {
+       /// <summary>
+       /// Método que inicializa
+       /// </summary>
         public nJuego()
         {
             InitializeComponent();
@@ -22,7 +27,10 @@ namespace Lab3
 
         int cantidadJugadores;
 
-        //Obtiene la cantidad de jugadores y valida el dato ingresado, lo manda a clase Amigo secreto
+        /// <summary>
+        /// Método que se ejecuta al dar click al botón btnCantJugadores.
+        /// Obtiene la cantidad de jugadores, valida el dato y lo manda a la clase AmigoSecreto
+        /// </summary>
         public void btnCantJugadores_Click(object sender, EventArgs e)
         {
             string cantidadJ = txtCantJugadores.Text;
@@ -42,7 +50,7 @@ namespace Lab3
                 pInfoJuego.Visible = true;
 
                 AmigoSecreto numJugadores = new AmigoSecreto();
-                numJugadores.getcantJugadores(cantJugadores);
+                numJugadores.setCantJugadores(cantJugadores);
                 
 
             }
@@ -51,7 +59,12 @@ namespace Lab3
         }
 
         
-
+        /// <summary>
+        /// Método que se ejecuta al dar click en el botón btnInfJuga.
+        /// Envía la información ingresada en cada text box a la clase Jugadores y prepara el panel para que muestre otra información después.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInfJuga_Click(object sender, EventArgs e)
         {
             for (int j = 1;j>=cantidadJugadores; j++)
@@ -62,7 +75,7 @@ namespace Lab3
                 string regalo = txbRegalo.Text;
 
                 Jugadores jugador = new Jugadores();
-                jugador.jugador(nombre, correo, endulzada, regalo);
+                jugador.objetoJugador(nombre, correo, endulzada, regalo);
 
                 lblJugador.Text = ("Jugador" + j);
 
@@ -82,6 +95,11 @@ namespace Lab3
 
         }
 
+        /// <summary>
+        /// Método que se ejecuta al dar click al botón btnAsignar.
+        /// Asigna los amigos secretos y simula un correo informando a cada jugador a quien debe endulzar.
+        /// </summary>
+        
         private void btnAsignar_Click(object sender, EventArgs e)
         {
            
@@ -93,15 +111,63 @@ namespace Lab3
 
         }
 
+        /// <summary>
+        /// Método que se ejecuta cuanto se le da click al botón btnInfJue.
+        /// Valida y envía la información de los text boxs a la clase Amigo Secreto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInfJue_Click(object sender, EventArgs e)
         {
             string numEndulzadas = txbEndulzadas.Text;
             string frecEdulzadas = txbDias.Text;
             string valorEndulzadas = txbValEndulzadas.Text;
             string valorRegalo = txbValRegalo.Text;
-           // string inicio = fechaIniJ.date; sacar la fecha del calendario
+            // string inicio = fechaIniJ.date; sacar la fecha del calendario
+            DateTime fechaInicio = fechaIniJ.Value;
+            DateTime fechaFin = fechaFinJ.Value;
 
-           
+            int cantEndul;
+            int frecEndul;
+            float valEndul;
+            float valRegalo;
+
+
+            if (!(int.TryParse(numEndulzadas, out cantEndul) || int.TryParse(frecEdulzadas, out frecEndul) || float.TryParse(valorEndulzadas, out valEndul) || float.TryParse(valorRegalo, out valRegalo) 
+                || fechaInicio>DateTime.Now || fechaFin>DateTime.Now))
+            {
+                
+                if (cantEndul<0)
+                {
+                    MessageBox.Show("La cantidad de endulzadas no puede ser negativa");
+                }
+                if (frecEndul<0)
+                {
+                    MessageBox.Show("La frecuencia de las endulzadas no puede negativa");
+                }
+                if (valRegalo<0)
+                {
+                    MessageBox.Show("El valor del regalo no puede ser negativo, si no desean dar regalo establece el valor a 0");
+                }
+                if (valEndul <0)
+                {
+                    MessageBox.Show("El valor de las endulzadas no puede ser negativo, si no desean dar endulzadas establece el valor a 0");
+                }
+                if (fechaInicio < DateTime.Now && fechaFin < DateTime.Now)
+                {
+                    MessageBox.Show("Si no vas a jugar con viajeros del tiempo, te recomendamos revisar las fechas que seleccionaste");
+                }
+                else
+                {
+                    MessageBox.Show("Por favor revisa los datos ingresados");
+                }
+
+            }
+           else
+            {
+                AmigoSecreto info = new AmigoSecreto();
+                info.informacionJuego(cantEndul, frecEndul, valEndul, valRegalo, fechaInicio, fechaFin);
+            }
 
         }
     }

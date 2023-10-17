@@ -10,16 +10,23 @@ using System.Windows.Forms;
 
 namespace Lab3
 {
-    //Clase que ejecuta los metodos respectivos a las acciones que se pueden realizar en la primera
-    //pantalla del programa y el menú.
+    /// <summary>
+    /// Clase que contiene los métodos que se ejecutan al interactuar con la interfaz inicial.
+    /// </summary>
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Método que inicializa
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
         }
 
-        //Metodo que cambia la interfaz del panelMain según la opcion seleccionada en el menu
+        /// <summary>
+        /// Método que cambia la interfaz del panelMain según la opcion seleccionada en el menú.
+        /// </summary>
+        /// <param name="interfaznueva">Nombre de la interfaz que se debe mostrar</param>
         public void cambiarInterfaz(object interfaznueva)
         {
             if (panelMain.Controls.Count>0)
@@ -35,23 +42,33 @@ namespace Lab3
             }
         }
 
-        //metodo que llama al metodo cambiarInterfaz al seleccionar la opcion Nuevo Juego del menu
+        /// <summary>
+        /// Método que llama al método cambiarInterfaz al seleccionar la opcion Nuevo Juego del menú.
+        /// </summary>
         private void btnNuevoJuego_Click(object sender, EventArgs e)
         {
             cambiarInterfaz(new nJuego() );
         }
 
-        //Metodo que llama al metodo cambiarInterfaz al darle click al logo del programa
+        /// <summary>
+        /// Método que llama al método cambiarInterfaz al dar click en el logo del programa.
+        /// </summary>
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             cambiarInterfaz(new inicio());
         }
 
+        /// <summary>
+        /// Método que llama al método cambiarInterfaz al seleccionar la opción Información de los Jugadores en el menú.
+        /// </summary>
         private void btnInfoJugadores_Click(object sender, EventArgs e)
         {
             cambiarInterfaz(new informacionJugadores());
         }
 
+        /// <summary>
+        /// Método que llama al método cambiarInterfaz al seleccionar la opción Información del Juego en el menú.
+        /// </summary>
         private void btnInfoJuego_Click(object sender, EventArgs e)
         {
             cambiarInterfaz(new informacionJuego());

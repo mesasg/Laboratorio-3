@@ -34,6 +34,10 @@
             this.btnCantJugadores = new System.Windows.Forms.Button();
             this.pCantJ = new System.Windows.Forms.Panel();
             this.pInfoJuego = new System.Windows.Forms.Panel();
+            this.txbValRegalo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txbValEndulzadas = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.fechaFinJ = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,10 +61,6 @@
             this.pJugInfo = new System.Windows.Forms.Panel();
             this.btnAsignar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.txbValRegalo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txbValEndulzadas = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.pCantJ.SuspendLayout();
             this.pInfoJuego.SuspendLayout();
             this.pJugInfo.SuspendLayout();
@@ -139,6 +139,44 @@
             this.pInfoJuego.Size = new System.Drawing.Size(401, 580);
             this.pInfoJuego.TabIndex = 12;
             this.pInfoJuego.Visible = false;
+            // 
+            // txbValRegalo
+            // 
+            this.txbValRegalo.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbValRegalo.Location = new System.Drawing.Point(248, 243);
+            this.txbValRegalo.Name = "txbValRegalo";
+            this.txbValRegalo.Size = new System.Drawing.Size(111, 25);
+            this.txbValRegalo.TabIndex = 21;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(240, 223);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 51);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Valor del regalo\r\n\r\n\r\n";
+            // 
+            // txbValEndulzadas
+            // 
+            this.txbValEndulzadas.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbValEndulzadas.Location = new System.Drawing.Point(66, 243);
+            this.txbValEndulzadas.Name = "txbValEndulzadas";
+            this.txbValEndulzadas.Size = new System.Drawing.Size(111, 25);
+            this.txbValEndulzadas.TabIndex = 19;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(28, 223);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(187, 17);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Valor de las endulzadas\r\n";
             // 
             // label9
             // 
@@ -386,44 +424,6 @@
             this.label10.Size = new System.Drawing.Size(323, 19);
             this.label10.TabIndex = 11;
             this.label10.Text = "INFORMACIÓN DE LOS JUGADORES\r\n";
-            // 
-            // txbValRegalo
-            // 
-            this.txbValRegalo.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbValRegalo.Location = new System.Drawing.Point(248, 243);
-            this.txbValRegalo.Name = "txbValRegalo";
-            this.txbValRegalo.Size = new System.Drawing.Size(111, 25);
-            this.txbValRegalo.TabIndex = 21;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(240, 223);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 51);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Valor del regalo\r\n\r\n\r\n";
-            // 
-            // txbValEndulzadas
-            // 
-            this.txbValEndulzadas.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbValEndulzadas.Location = new System.Drawing.Point(66, 243);
-            this.txbValEndulzadas.Name = "txbValEndulzadas";
-            this.txbValEndulzadas.Size = new System.Drawing.Size(111, 25);
-            this.txbValEndulzadas.TabIndex = 19;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(28, 223);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(187, 17);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Valor de las endulzadas\r\n";
             // 
             // nJuego
             // 
