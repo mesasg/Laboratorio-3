@@ -30,12 +30,14 @@
         {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pIngInfo = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.calFecha = new System.Windows.Forms.DateTimePicker();
+            this.btnInfoJuego = new System.Windows.Forms.Button();
+            this.lblEndulz = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblMostrarInfo = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.lblProxEndul = new System.Windows.Forms.Label();
+            this.lblFJ = new System.Windows.Forms.Label();
+            this.btnProxE = new System.Windows.Forms.Button();
             this.pIngInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,73 +54,96 @@
             // pIngInfo
             // 
             this.pIngInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
-            this.pIngInfo.Controls.Add(this.monthCalendar1);
-            this.pIngInfo.Controls.Add(this.label3);
+            this.pIngInfo.Controls.Add(this.calFecha);
+            this.pIngInfo.Controls.Add(this.btnInfoJuego);
+            this.pIngInfo.Controls.Add(this.lblEndulz);
+            this.pIngInfo.Controls.Add(this.label5);
             this.pIngInfo.Controls.Add(this.label1);
-            this.pIngInfo.Controls.Add(this.button1);
-            this.pIngInfo.Controls.Add(this.label2);
-            this.pIngInfo.Controls.Add(this.lblMostrarInfo);
+            this.pIngInfo.Controls.Add(this.lblProxEndul);
+            this.pIngInfo.Controls.Add(this.lblFJ);
+            this.pIngInfo.Controls.Add(this.btnProxE);
             this.pIngInfo.Location = new System.Drawing.Point(32, 82);
             this.pIngInfo.Name = "pIngInfo";
             this.pIngInfo.Size = new System.Drawing.Size(940, 540);
             this.pIngInfo.TabIndex = 13;
             // 
-            // label3
+            // calFecha
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lucida Bright", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(55, 127);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 19);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Amigos Secretos";
+            this.calFecha.Location = new System.Drawing.Point(86, 94);
+            this.calFecha.Name = "calFecha";
+            this.calFecha.Size = new System.Drawing.Size(253, 22);
+            this.calFecha.TabIndex = 24;
+            // 
+            // btnInfoJuego
+            // 
+            this.btnInfoJuego.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
+            this.btnInfoJuego.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfoJuego.Location = new System.Drawing.Point(599, 166);
+            this.btnInfoJuego.Name = "btnInfoJuego";
+            this.btnInfoJuego.Size = new System.Drawing.Size(198, 65);
+            this.btnInfoJuego.TabIndex = 23;
+            this.btnInfoJuego.Text = "Imprimir la Información del Juego";
+            this.btnInfoJuego.UseVisualStyleBackColor = true;
+            this.btnInfoJuego.Click += new System.EventHandler(this.btnInfoJuego_Click);
+            // 
+            // lblEndulz
+            // 
+            this.lblEndulz.AutoSize = true;
+            this.lblEndulz.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndulz.Location = new System.Drawing.Point(56, 166);
+            this.lblEndulz.Name = "lblEndulz";
+            this.lblEndulz.Size = new System.Drawing.Size(0, 17);
+            this.lblEndulz.TabIndex = 23;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Lucida Bright", 10F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(57, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(313, 19);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "¿Cuándo es la próxima endulzada?";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 177);
+            this.label1.Location = new System.Drawing.Point(131, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 17);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Decir quien tiene a quien";
+            this.label1.Size = new System.Drawing.Size(164, 17);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Selecciona una fecha";
             // 
-            // button1
+            // lblProxEndul
             // 
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
-            this.button1.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(606, 314);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 34);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Calcular";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lblProxEndul.AutoSize = true;
+            this.lblProxEndul.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProxEndul.Location = new System.Drawing.Point(208, 366);
+            this.lblProxEndul.Name = "lblProxEndul";
+            this.lblProxEndul.Size = new System.Drawing.Size(0, 17);
+            this.lblProxEndul.TabIndex = 19;
             // 
-            // label2
+            // lblFJ
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lucida Bright", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(55, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Jugador 1";
+            this.lblFJ.AutoSize = true;
+            this.lblFJ.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFJ.Location = new System.Drawing.Point(56, 415);
+            this.lblFJ.Name = "lblFJ";
+            this.lblFJ.Size = new System.Drawing.Size(0, 17);
+            this.lblFJ.TabIndex = 12;
             // 
-            // lblMostrarInfo
+            // btnProxE
             // 
-            this.lblMostrarInfo.AutoSize = true;
-            this.lblMostrarInfo.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostrarInfo.Location = new System.Drawing.Point(56, 86);
-            this.lblMostrarInfo.Name = "lblMostrarInfo";
-            this.lblMostrarInfo.Size = new System.Drawing.Size(227, 17);
-            this.lblMostrarInfo.TabIndex = 2;
-            this.lblMostrarInfo.Text = "Mostrar info de cada jugador";
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(520, 95);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 15;
+            this.btnProxE.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
+            this.btnProxE.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProxE.Location = new System.Drawing.Point(59, 319);
+            this.btnProxE.Name = "btnProxE";
+            this.btnProxE.Size = new System.Drawing.Size(308, 34);
+            this.btnProxE.TabIndex = 10;
+            this.btnProxE.Text = "Calcular\r\n";
+            this.btnProxE.UseVisualStyleBackColor = true;
+            this.btnProxE.Click += new System.EventHandler(this.btnProxE_Click_1);
             // 
             // informacionJuego
             // 
@@ -142,11 +167,13 @@
 
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Panel pIngInfo;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblFJ;
+        private System.Windows.Forms.Button btnProxE;
+        private System.Windows.Forms.Label lblProxEndul;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblMostrarInfo;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnInfoJuego;
+        public System.Windows.Forms.Label lblEndulz;
+        private System.Windows.Forms.DateTimePicker calFecha;
     }
 }

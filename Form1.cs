@@ -45,14 +45,18 @@ namespace Lab3
         /// <summary>
         /// Método que llama al método cambiarInterfaz al seleccionar la opcion Nuevo Juego del menú.
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNuevoJuego_Click(object sender, EventArgs e)
         {
-            cambiarInterfaz(new nJuego() );
+            cambiarInterfaz(new nJuego());
         }
 
         /// <summary>
         /// Método que llama al método cambiarInterfaz al dar click en el logo del programa.
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             cambiarInterfaz(new inicio());
@@ -61,18 +65,26 @@ namespace Lab3
         /// <summary>
         /// Método que llama al método cambiarInterfaz al seleccionar la opción Información de los Jugadores en el menú.
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInfoJugadores_Click(object sender, EventArgs e)
         {
             cambiarInterfaz(new informacionJugadores());
+
         }
 
         /// <summary>
         /// Método que llama al método cambiarInterfaz al seleccionar la opción Información del Juego en el menú.
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInfoJuego_Click(object sender, EventArgs e)
         {
             cambiarInterfaz(new informacionJuego());
+
+
         }
+
     }
 
 }

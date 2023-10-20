@@ -404,9 +404,9 @@
             // 
             this.btnAsignar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(193)))), ((int)(((byte)(238)))));
             this.btnAsignar.Font = new System.Drawing.Font("Lucida Bright", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAsignar.Location = new System.Drawing.Point(202, 494);
+            this.btnAsignar.Location = new System.Drawing.Point(168, 473);
             this.btnAsignar.Name = "btnAsignar";
-            this.btnAsignar.Size = new System.Drawing.Size(153, 57);
+            this.btnAsignar.Size = new System.Drawing.Size(187, 78);
             this.btnAsignar.TabIndex = 12;
             this.btnAsignar.Text = "Asignar \r\nAmigos Secretos";
             this.btnAsignar.UseVisualStyleBackColor = true;

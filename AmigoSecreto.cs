@@ -4,11 +4,12 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Lab3
 {
     /// <summary>
-    /// Clase que contiene los métodos que obtienen y guardan la información del juego y los jugadores
+    /// Clase que contiene los métodos que obtienen y guardan la información del juego y los jugadores.
     /// </summary>
     public class AmigoSecreto
     {
@@ -27,31 +28,13 @@ namespace Lab3
 
 
         /// <summary>
-        /// Método que asigna valores a las variables de la clase AmigoSeceto
+        /// Método que guarda la cantidad de personas que participarán en el amigo secreto
         /// </summary>
-        /// <param name="cantEndul">Cantidad de veces que se van a endulzar durante el juego</param>
-        /// <param name="frecEndul">El número de días que transcurriran entre endulzadas</param>
-        /// <param name="valEndul">El costo min de las endulzadas</param>
-        /// <param name="valRegalo">El costo min del regalo</param>
-        public void informacionJuego(int cantEndul, int frecEndul, float valEndul, float valRegalo, DateTime fechaInicio, DateTime fechaFin)
-        {
-            this.cantidadEndulzadas = cantEndul;
-            this.frecuenciaEndulzadas= frecEndul;
-            this.valorEndulzadas= valEndul;
-            this.valorRegalo = valRegalo;
-            this.inicio = fechaInicio;
-            this.descubrimiento = fechaFin;
-            
-        }
-
-        /// <summary>
-        /// Método que recibe la cantidad de personas que participarán en el amigo secreto
-        /// </summary>
-        /// <returns>La cantidad de personas que jugarán</returns>
-        public void setCantJugadores(int cantuga)
+        /// <param name="cantJuga">Cantidad de personas que perticiparán en el juego</param>
+        public void setCantJugadores(int cantJuga)
         {
 
-           this.cantidadJugadores = cantuga;
+           cantidadJugadores = cantJuga;
 
         }
 
@@ -66,62 +49,146 @@ namespace Lab3
 
         }
 
+
         /// <summary>
-        /// Método que obtiene la cantidad de endulzadas
+        /// Método que guarda la cantidad de endulzadas
         /// </summary>
-        /// <returns>La cantidad de veces que se van a endulzar durante el juego</returns>
-        public int getCantEndulzadas()
+        /// <param name="cantEndul">La cantidad de veces que se van a endulzar durante el juego</param>
+        public void setCantEndulzadas(int cantEndul)
         {
-            return (cantidadEndulzadas);
+            cantidadEndulzadas = cantEndul;
         }
-        
+
+
         /// <summary>
-        /// Método que obtiene la frecuencia de enduolzadas en días
+        /// Método que guarda la frecuencia de endulzadas en días
         /// </summary>
-        /// <returns>El número de días que transcurriran entre endulzadas</returns>
-        public int getFrecEndulzadas()
+        /// <param name="frecEndul">El número de días que transcurriran entre endulzadas</param>
+        public void setFrecEndulzadas(int frecEndul)
         {
-            return (frecuenciaEndulzadas) ;
+            frecuenciaEndulzadas = frecEndul;
         }
-        
+
+
         /// <summary>
-        /// Método que obtiene el valor que deben costar las endulzadas
+        /// Método que guarda el valor que deben tener las endulzadas
         /// </summary>
-        /// <returns>El costo min de la endulzada</returns>
-        public float getValEndulzadas()
+        /// <param name="valEndul">El costo min de la endulzada</param>
+        public void setValEndulzadas(float valEndul)
         {
-            return (valorEndulzadas);
+            valorEndulzadas = valEndul;
         }
-       
+
         /// <summary>
-        /// Método que obtiene el valor que debe costar el regalo del descubrimiento
+        /// Método que guarda el valor que debe tener el regalo del descubrimiento
         /// </summary>
-        /// <returns>El costo min del regalo</returns>
-        public float getValRegalo()
+        /// <param name="valRegalo">El costo min del regalo</param>
+        public void setValRegalo(float valRegalo)
         {
-            return (valorRegalo);
+            valorRegalo = valRegalo;
         }
+
+        /// <summary>
+        /// Método que guarda la fecha en la que se acaba el juego
+        /// </summary>
+        /// <param name="fechaFin">Fecha del fin del juego, el descubrimiento</param>
+        public void setFechaDescu(DateTime fechaFin)
+        {
+            descubrimiento = fechaFin;
+           
+        }
+
+        /// <summary>
+        /// Método que guarda la fecha en la que inicia el juego
+        /// </summary>
+        /// <param name="fechaInicio">Fecha en la que inicia el juego</param>
+        public void setFechaInicio (DateTime fechaInicio)
+        {
+            inicio = fechaInicio;
+        }
+
 
 
         /// <summary>
         /// Método que guarda la información de los jugadores en un vector
         /// </summary>
-        /// <returns></returns>
-        public void vectorJugadores(Jugadores infoJugador)
+        /// <returns>El vector con los objetos de la clase jugador</returns>
+        public Jugadores[] vectorJugadores()
         {
-            int n = getCantJugadores();
 
+            nJuego nJuego = new nJuego();
+            List<Jugadores> jugadores = nJuego.enviarLista();
+
+            Jugadores[] vectorJugadores = jugadores.ToArray();
+
+            return (vectorJugadores);
+
+        }
+
+
+        /// <summary>
+        /// Método que calcula cuándo es la próxima endulzada.
+        /// </summary>
+        /// <param name="fecha">Fecha que el usuario selecciona en el calendario</param>
+        /// <returns>Cuándo es la próxima endulzada</returns>
+        public string proxEndulzada(DateTime fecha)
+        {
             
-            AmigoSecreto[] jugadores = new AmigoSecreto[n];
-            for (int i = 0; i < n; i++)
-            {
-                    jugadores[i] = infoJugador;
+            int revision = DateTime.Compare(fecha, descubrimiento);
 
+            MessageBox.Show(fecha.ToString() + descubrimiento.ToString());
+            if (revision<0)
+            {
+                TimeSpan diasTranscu = inicio.Subtract(fecha);
+                int dias = diasTranscu.Days;
+                int endulPasadas = dias / frecuenciaEndulzadas;
+                int edulFaltan = cantidadEndulzadas - endulPasadas;
+
+                if (edulFaltan > 0)
+                {
+                    
+                    int ultEndul = dias % frecuenciaEndulzadas;
+                    int proxima = frecuenciaEndulzadas - ultEndul;
+                    DateTime proxEndulzada = fecha.AddDays(proxima);
+                    string proxFecha = proxEndulzada.ToString();
+                    return ("La próxima endulzada es el: " + proxFecha);
+                }
+                else
+                {
+                    return ("Ya diste todas las endulzadas");
+                }
+               
+            }
+            else
+            {
+                if (revision == 0)
+                {
+                    return ("No hay más endulzdas, hoy es el descubrimiento.");
+                }
+                if (revision > 0)
+                {
+                    return ("Ya pasó el descubrimiento");
+                }
+                else  
+                {
+                    return ("Ya se terminó el juego");
+                }
+                
             }
 
         }
-        
-        
+
+        /// <summary>
+        /// Método que imprime la información del juego.
+        /// </summary>
+        public void imprimirInfoJuego()
+        {
+            MessageBox.Show("Inicio del juego: " + inicio.ToString() + Environment.NewLine + "Fecha Descubrimiento: " + descubrimiento.ToString() +
+            Environment.NewLine + "Inicio del juego:" + cantidadEndulzadas.ToString() + Environment.NewLine + "Frecuencia de las endulzadas: " 
+            + frecuenciaEndulzadas.ToString() + " días" + Environment.NewLine + "Valor de las endulzadas: " +valorEndulzadas.ToString() +
+            Environment.NewLine + "Valor Regalo: " + valorRegalo.ToString());
+
+        }
 
 
     }
