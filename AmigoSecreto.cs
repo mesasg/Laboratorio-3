@@ -136,7 +136,7 @@ namespace Lab3
             
             int revision = DateTime.Compare(fecha, descubrimiento);
 
-            MessageBox.Show(fecha.ToString() + descubrimiento.ToString());
+            
             if (revision<0)
             {
                 TimeSpan diasTranscu = inicio.Subtract(fecha);
