@@ -144,7 +144,7 @@ namespace Lab3
             }
             else
             {
-                MessageBox.Show("Por favor escribe todos los datos en números");
+                MessageBox.Show("Por favor escribe todos los datos en números, la cantidad y la frecuencia de las endulzadas deben ser enteros");
             }
 
 
